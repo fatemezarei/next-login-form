@@ -13,7 +13,7 @@ export default function UserInfoModal({ user, onClose }: Props) {
       <div className="bg-white rounded-xl w-full max-w-md p-6 relative text-right">
         <button
           onClick={onClose}
-          className="absolute top-3 left-3 text-gray-500 text-xl"
+          className="absolute top-3 left-3 text-gray-500 text-xl cursor-pointer"
         >
           ✕
         </button>

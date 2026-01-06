@@ -1,6 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
 import { api } from "@/lib/axios";
-import { LoginPayload, LoginResponse } from "./types";
+import { LoginPayload, LoginResponse } from "@/types/login";
 import { LoginStatus } from "@/enums/login-status";
 
 export function useLogin(onSuccess: (token: string) => void) {

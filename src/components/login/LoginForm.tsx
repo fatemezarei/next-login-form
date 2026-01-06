@@ -50,6 +50,14 @@ export function LoginForm({ onSubmit, loading, errorMessage }: Props) {
     if (newErrors.nationalCode || newErrors.password) return;
 
     onSubmit(values.nationalCode!, values.password!);
+    setValues({
+      nationalCode: null,
+      password: null,
+    });
+    setErrors({
+      nationalCode: null,
+      password: null,
+    });
   };
 
   return (
@@ -70,18 +78,20 @@ export function LoginForm({ onSubmit, loading, errorMessage }: Props) {
                 nationalCode: e.target.value.replace(/\D/g, ""),
               }))
             }
-            className={`w-full h-14 rounded-lg p-4 border ${
+            className={`w-full h-14 rounded-lg p-4 border text-[#022959] ${
               errors.nationalCode
                 ? "border-red-500 bg-red-50"
                 : "border-[#D6D9E6]"
             }`}
           />
 
-          {errors.nationalCode && (
-            <p className="text-red-600 text-sm mt-1 text-right">
-              {errors.nationalCode}
-            </p>
-          )}
+          <p
+            className={`text-red-600 text-sm mt-1 text-right transition-opacity duration-200 ${
+              errors.nationalCode ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            {errors.nationalCode ?? " "}
+          </p>
         </div>
 
         <div className="mb-6">
@@ -98,23 +108,27 @@ export function LoginForm({ onSubmit, loading, errorMessage }: Props) {
                 password: e.target.value,
               }))
             }
-            className={`w-full h-14 rounded-lg p-4 border ${
+            className={`w-full h-14 rounded-lg p-4 border text-[#022959] ${
               errors.password ? "border-red-500 bg-red-50" : "border-[#D6D9E6]"
             }`}
           />
 
-          {errors.password && (
-            <p className="text-red-600 text-sm mt-1 text-right">
-              {errors.password}
-            </p>
-          )}
+          <p
+            className={`text-red-600 text-sm mt-1 text-right transition-opacity duration-200 ${
+              errors.password ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            {errors.password ?? " "}
+          </p>
         </div>
 
-        {errorMessage && (
-          <div className="bg-red-100 text-red-800 p-3 rounded-lg mb-4 text-center">
-            {errorMessage}
-          </div>
-        )}
+        <div
+          className={`bg-red-100 text-red-800 p-3 rounded-lg mb-4 text-center transition-opacity duration-200 ${
+            errorMessage ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          {errorMessage ?? " "}
+        </div>
 
         <button
           type="submit"
