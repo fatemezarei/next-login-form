@@ -21,7 +21,7 @@ export default function UserDropdown({ open }: Props) {
   if (!open) return null;
 
   return (
-    <div className="absolute left-0 mt-3 w-72 bg-white rounded-xl shadow-lg border p-4 text-right z-50">
+    <div className="absolute left-0 mt-10 w-72 bg-white rounded-xl shadow-lg border p-4 text-right z-50">
       {isLoading && <p className="text-center text-sm">در حال بارگذاری...</p>}
       {error && (
         <p className="text-center text-sm text-red-600">
