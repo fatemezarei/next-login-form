@@ -21,3 +21,21 @@ export interface UsersApiResponse {
     totalCount: number;
   };
 }
+
+export interface UserInfo {
+  id: number;
+  firstName: string;
+  lastName: string;
+  role: string;
+  email: string | null;
+  address: string | null;
+  birthDate: string | null;
+  mobile: string;
+  social_security_number: string;
+}
+
+export interface UserInfoResponse {
+  status: number;
+  message: string;
+  result: UserInfo;
+}
