@@ -19,7 +19,7 @@ export default function Header() {
             onClick={() =>
               setOpenPanel((prev) => (prev === "user" ? null : "user"))
             }
-            className="px-4 py-2 rounded-lg bg-[#EFF5FF] text-[#022959] font-medium"
+            className="px-4 py-2 rounded-lg bg-[#EFF5FF] text-[#022959] font-medium cursor-pointer"
           >
             اطلاعات کاربر
           </button>
@@ -29,7 +29,7 @@ export default function Header() {
             onClick={() =>
               setOpenPanel((prev) => (prev === "school" ? null : "school"))
             }
-            className="px-4 py-2 rounded-lg bg-[#EFF5FF] text-[#022959] font-medium"
+            className="px-4 py-2 rounded-lg bg-[#EFF5FF] text-[#022959] font-medium cursor-pointer"
           >
             اطلاعات مدرسه
           </button>

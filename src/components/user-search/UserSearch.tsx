@@ -25,13 +25,13 @@ export default function UserSearch({ onSearch }: Props) {
         placeholder=" ...جستجو "
         value={filter}
         onChange={(e) => setFilter(e.target.value)}
-        className="flex-1 h-12 rounded-lg border border-gray-300 px-4 text-[#022959] placeholder:text-[#022959] text-right"
+        className="flex-1 h-12 rounded-lg border border-gray-300 px-4 text-[#022959] placeholder:text-[#022959] text-right cursor-pointer"
       />
 
       <select
         value={role}
         onChange={(e) => setRole(e.target.value)}
-        className="h-12 rounded-lg border border-gray-300 px-4 text-[#022959]"
+        className="h-12 rounded-lg border border-gray-300 px-4 text-[#022959] cursor-pointer"
       >
         <option value="" className="text-[#022959]">
           همه نقش‌ها
@@ -46,7 +46,7 @@ export default function UserSearch({ onSearch }: Props) {
 
       <button
         type="submit"
-        className="h-12 px-6 rounded-lg bg-[#022959] text-white"
+        className="h-12 px-6 rounded-lg bg-[#022959] text-white cursor-pointer"
       >
         جستجو
       </button>

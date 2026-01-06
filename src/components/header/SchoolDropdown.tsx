@@ -24,7 +24,7 @@ export default function SchoolDropdown({ open }: Props) {
   if (!open) return null;
 
   return (
-    <div className="absolute left-0 mt-3 w-96 bg-white rounded-xl shadow-lg border p-4 text-right z-50">
+    <div className="absolute left-0 mt-10 -ml-22 w-96 bg-white rounded-xl shadow-lg border p-4 text-right z-50">
       {isLoading && <p className="text-center text-sm">در حال بارگذاری...</p>}
       {error && (
         <p className="text-center text-sm text-red-600">

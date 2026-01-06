@@ -85,11 +85,13 @@ export function LoginForm({ onSubmit, loading, errorMessage }: Props) {
             }`}
           />
 
-          {errors.nationalCode && (
-            <p className="text-red-600 text-sm mt-1 text-right">
-              {errors.nationalCode}
-            </p>
-          )}
+          <p
+            className={`text-red-600 text-sm mt-1 text-right transition-opacity duration-200 ${
+              errors.nationalCode ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            {errors.nationalCode ?? " "}
+          </p>
         </div>
 
         <div className="mb-6">
@@ -111,18 +113,22 @@ export function LoginForm({ onSubmit, loading, errorMessage }: Props) {
             }`}
           />
 
-          {errors.password && (
-            <p className="text-red-600 text-sm mt-1 text-right">
-              {errors.password}
-            </p>
-          )}
+          <p
+            className={`text-red-600 text-sm mt-1 text-right transition-opacity duration-200 ${
+              errors.password ? "opacity-100" : "opacity-0"
+            }`}
+          >
+            {errors.password ?? " "}
+          </p>
         </div>
 
-        {errorMessage && (
-          <div className="bg-red-100 text-red-800 p-3 rounded-lg mb-4 text-center">
-            {errorMessage}
-          </div>
-        )}
+        <div
+          className={`bg-red-100 text-red-800 p-3 rounded-lg mb-4 text-center transition-opacity duration-200 ${
+            errorMessage ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          {errorMessage ?? " "}
+        </div>
 
         <button
           type="submit"
