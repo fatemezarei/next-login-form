@@ -22,7 +22,7 @@ export default function UserSearch({ onSearch }: Props) {
     >
       <input
         type="text"
-        placeholder="جستجو (نام، موبایل، کد ملی...)"
+        placeholder=" ...جستجو "
         value={filter}
         onChange={(e) => setFilter(e.target.value)}
         className="flex-1 h-12 rounded-lg border border-gray-300 px-4 text-[#022959] placeholder:text-[#022959] text-right"

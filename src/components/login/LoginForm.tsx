@@ -50,6 +50,14 @@ export function LoginForm({ onSubmit, loading, errorMessage }: Props) {
     if (newErrors.nationalCode || newErrors.password) return;
 
     onSubmit(values.nationalCode!, values.password!);
+    setValues({
+      nationalCode: null,
+      password: null,
+    });
+    setErrors({
+      nationalCode: null,
+      password: null,
+    });
   };
 
   return (
@@ -70,7 +78,7 @@ export function LoginForm({ onSubmit, loading, errorMessage }: Props) {
                 nationalCode: e.target.value.replace(/\D/g, ""),
               }))
             }
-            className={`w-full h-14 rounded-lg p-4 border ${
+            className={`w-full h-14 rounded-lg p-4 border text-[#022959] ${
               errors.nationalCode
                 ? "border-red-500 bg-red-50"
                 : "border-[#D6D9E6]"
@@ -98,7 +106,7 @@ export function LoginForm({ onSubmit, loading, errorMessage }: Props) {
                 password: e.target.value,
               }))
             }
-            className={`w-full h-14 rounded-lg p-4 border ${
+            className={`w-full h-14 rounded-lg p-4 border text-[#022959] ${
               errors.password ? "border-red-500 bg-red-50" : "border-[#D6D9E6]"
             }`}
           />
