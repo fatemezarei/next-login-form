@@ -3,10 +3,10 @@
 interface Props {
   limit: number;
   setLimit: (value: number) => void;
-  setPage: (page: number) => void; // برای اینکه هنگام تغییر limit صفحه به 1 برگرده
-  min?: number; // اختیاری، حداقل
-  max?: number; // اختیاری، حداکثر
-  step?: number; // اختیاری، میزان تغییر
+  setPage: (page: number) => void;
+  min?: number;
+  max?: number;
+  step?: number;
 }
 
 export default function LimitControl({

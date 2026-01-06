@@ -3,12 +3,12 @@
 import { useState } from "react";
 
 interface Props {
-  onSearch: (filter: string, role: string) => void;
+  onSearch: (filter: string | null, role: string | null) => void;
 }
 
 export default function UserSearch({ onSearch }: Props) {
-  const [filter, setFilter] = useState("");
-  const [role, setRole] = useState("");
+  const [filter, setFilter] = useState<string | null>(null);
+  const [role, setRole] = useState<string | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,14 +23,14 @@ export default function UserSearch({ onSearch }: Props) {
       <input
         type="text"
         placeholder=" ...جستجو "
-        value={filter}
-        onChange={(e) => setFilter(e.target.value)}
+        value={filter ?? ""}
+        onChange={(e) => setFilter(e.target.value || null)}
         className="flex-1 h-12 rounded-lg border border-gray-300 px-4 text-[#022959] placeholder:text-[#022959] text-right cursor-pointer"
       />
 
       <select
-        value={role}
-        onChange={(e) => setRole(e.target.value)}
+        value={role ?? ""}
+        onChange={(e) => setRole(e.target.value || null)}
         className="h-12 rounded-lg border border-gray-300 px-4 text-[#022959] cursor-pointer"
       >
         <option value="" className="text-[#022959]">
